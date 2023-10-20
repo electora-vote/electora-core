@@ -1,4 +1,4 @@
-default: build-wasm
+default: build-wasm build-python test
 
 build-wasm: build-wasm-web build-wasm-node build-wasm-bundler
 
@@ -13,3 +13,12 @@ build-wasm-node:
 build-wasm-bundler:
     @echo "Building wasm for bundler"
     wasm-pack build --target bundler --out-dir ./pkg/bundler
+
+build-python:
+    maturin build
+
+test: test-python
+
+test-python:
+    maturin develop
+    pytest

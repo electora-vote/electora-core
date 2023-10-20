@@ -1,0 +1,8 @@
+[project]
+name = "electora_core"
+readme = "README.md"
+version = "0.1.0"
+
+[build-system]
+requires = ["maturin"]
+build-backend = "maturin"
